@@ -12,8 +12,5 @@ class Visitador < ActiveRecord::Base
         punt
     end
 
-    searchable do
-        text :Nombre, :numeroVisitador
-        integer :puntuacion     
-    end
+  
 end

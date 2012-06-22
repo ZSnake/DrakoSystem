@@ -3,10 +3,8 @@ class ActividadsController < ApplicationController
   # GET /actividads.json
   before_filter :authenticate_user!
   def index
-    @search = Actividad.search do
-      fulltext params[:search]
-    end
-    @actividads = @search.results
+    
+    @actividads = Actividad.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @actividads }
