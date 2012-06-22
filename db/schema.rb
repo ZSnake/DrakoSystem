@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622093254) do
+ActiveRecord::Schema.define(:version => 20120622132149) do
 
   create_table "actividads", :force => true do |t|
     t.string   "Nombre"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120622093254) do
     t.text     "Observaciones"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "puntuacion"
   end
 
 end

@@ -42,7 +42,10 @@ class ActividadsController < ApplicationController
   # POST /actividads.json
   def create
     @actividad = Actividad.new(params[:actividad])
-
+    @actividad.visitadors.each do |v|
+        v.puntos
+        v.save
+    end
     respond_to do |format|
       if @actividad.save
         format.html { redirect_to @actividad, notice: 'Actividad was successfully created.' }
@@ -58,7 +61,10 @@ class ActividadsController < ApplicationController
   # PUT /actividads/1.json
   def update
     @actividad = Actividad.find(params[:id])
-
+    @actividad.visitadors.each do |v|
+         v.puntos
+         v.save
+    end
     respond_to do |format|
       if @actividad.update_attributes(params[:actividad])
         format.html { redirect_to @actividad, notice: 'Actividad was successfully updated.' }

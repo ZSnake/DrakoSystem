@@ -2,6 +2,13 @@ class VisitadorsController < ApplicationController
   # GET /visitadors
   # GET /visitadors.json
   before_filter :authenticate_user!
+  before_filter :points 
+  def points
+    Visitador.all.each do |v|
+      v.puntos
+      v.save
+    end
+  end
   def index
     @visitadors = Visitador.all
 

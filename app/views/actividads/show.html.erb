@@ -6,12 +6,12 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:Nombre) %>:</strong></dt>
   <dd><%= @actividad.Nombre %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:DiaHabil) %>:</strong></dt>
+  <dt><strong>Dia Habil:</strong></dt>
   <dd><%= @actividad.DiaHabil %></dd>
   <dt><strong><%= model_class.human_attribute_name(:Fecha) %>:</strong></dt>
   <dd><%= @actividad.Fecha %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tipo_id) %>:</strong></dt>
-  <dd><%= @actividad.tipo_id %></dd>
+  <dt><strong>Tipo</strong></dt>
+  <dd><%= link_to @actividad.tipo_actividad.Nombre, @actividad.tipo_actividad %></dd>
   <dt><strong><%= model_class.human_attribute_name(:puntuacion) %>:</strong></dt>
   <dd><%= @actividad.puntuacion %></dd>
 </dl>

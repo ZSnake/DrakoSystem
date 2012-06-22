@@ -6,9 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:numeroVisitador) %></th>
+      <th>Numero de Visitador</th>
       <th><%= model_class.human_attribute_name(:Nombre) %></th>
       <th><%= model_class.human_attribute_name(:Observaciones) %></th>
+      <th>Puntuacion</th>
       <th>Creado en </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -20,6 +21,7 @@
         <td><%= visitador.numeroVisitador %></td>
         <td><%= visitador.Nombre %></td>
         <td><%= visitador.Observaciones %></td>
+        <td><%= visitador.puntuacion %></td>
         <td><%=l visitador.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

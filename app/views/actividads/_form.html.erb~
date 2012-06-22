@@ -1,10 +1,10 @@
 <%= simple_form_for @actividad, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :Nombre %>
-  <p>  <%= f.input :DiaHabil %> </p>
-  <p><%= f.input :Fecha %></p>
-  <%= f.association :tipo_actividad, :label_method => :Nombre, :label => "Tipo de actividad", :include_blank => false %>
-  <%= f.input :puntuacion, :collection => 1..10, :include_blank => false%>
-  <%= f.association :visitadors, :collection => Visitador.all, :label_method => :Nombre, :label => "Seleccione los visitadores participantes: ", :input_html => {:id => "mySelect", :size => 15}%>
+  <p><%= f.input :Nombre %></p>
+  <p>  <%= f.input :DiaHabil, :label => "Dia Habil" %> </p><p><%= f.input :Fecha %></p>
+  
+  <p><%= f.association :tipo_actividad, :label_method => :Nombre, :label => "Tipo de actividad", :include_blank => false %></p>
+  <p><%= f.input :puntuacion%></p>
+  <p><%= f.association :visitadors, :collection => Visitador.all, :label_method => :Nombre, :label => "Seleccione los visitadores participantes: ", :input_html => {:id => "mySelect", :size => 15}%></p>:
   
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

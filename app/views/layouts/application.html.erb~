@@ -31,7 +31,8 @@
           <a class="brand" href="/">Drako's System</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <!-- Final dropdown actividades -->
+	    <%if user_signed_in?%>
+              <!-- Inicio dropdown actividades -->
               <li class="dropdown">
                 <a href="#"
                      class="dropdown-toggle" data-toggle="dropdown">
@@ -57,12 +58,13 @@
                   <li> <%= link_to "Modificar Visitadores", visitadors_path %></li>
                 </ul>
                 </li><!-- Final de dropdown visitadores -->
+		<%end%>
             </ul>
 	    <ul class ="nav pull-right">
 		<%if user_signed_in? %>	
 			<% s = "Sesion iniciada: " + current_user.email%>				
-			<li> <%= link_to s, user_session%> </li>
-			
+			<li> <%= link_to s, edit_user_registration_path%> </li>
+            <li class="divider-vertical"></li>			
 			<li><%= link_to "Cerrar Sesion", destroy_user_session_path, :method => "delete"%></li>
 		<%else%>
 			<li><%= link_to "Iniciar Sesion", new_user_session_path%></li>
@@ -72,7 +74,9 @@
         </div>
       </div>
     </div>
-
+   <% if flash[:notice] %>
+  	<p class='notice'><%= flash[:notice] %></p>
+   <% end %>
     <div class="container">
       <div class="content">
         <div class="row">
