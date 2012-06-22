@@ -2,6 +2,12 @@
 <div class="page-header">
   <h1><%=t '.title', :default => "Actividades" %></h1>
 </div>
+<%= form_tag actividads_path, :method => :get do %>
+   <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+   </p>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -23,7 +29,7 @@
         <td><%= actividad.Nombre %></td>
         <td><%= actividad.DiaHabil %></td>
         <td><%= actividad.Fecha %></td>
-        <td><%= actividad.tipo_id %></td>
+        <td><%= link_to actividad.tipo_actividad.Nombre, actividad.tipo_actividad %></td>
         <td><%= actividad.puntuacion %></td>
         <td><%=l actividad.created_at %></td>
         <td>

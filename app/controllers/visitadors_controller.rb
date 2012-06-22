@@ -12,7 +12,10 @@ class VisitadorsController < ApplicationController
     end
   end
   def index
-    @visitadors = Visitador.all
+    @search = Visitador.search do
+        fulltext params[:search]
+    end
+    @visitadors = @search.results
 
     respond_to do |format|
       format.html # index.html.erb
