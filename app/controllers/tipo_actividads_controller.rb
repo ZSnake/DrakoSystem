@@ -1,6 +1,7 @@
 class TipoActividadsController < ApplicationController
   # GET /tipo_actividads
   # GET /tipo_actividads.json
+  before_filter :authenticate_user!
   def index
     @tipo_actividads = TipoActividad.all
 

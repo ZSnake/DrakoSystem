@@ -1,6 +1,7 @@
 class ActividadsController < ApplicationController
   # GET /actividads
   # GET /actividads.json
+  before_filter :authenticate_user!
   def index
     @actividads = Actividad.all
 

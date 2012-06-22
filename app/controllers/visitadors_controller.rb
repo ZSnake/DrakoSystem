@@ -1,6 +1,7 @@
 class VisitadorsController < ApplicationController
   # GET /visitadors
   # GET /visitadors.json
+  before_filter :authenticate_user!
   def index
     @visitadors = Visitador.all
 
