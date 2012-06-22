@@ -5,7 +5,7 @@ class VisitadorsController < ApplicationController
   before_filter :points 
   def points
     Visitador.all.each do |v|
-      if v.puntaje
+      if v.puntuacion
         v.puntos
         v.save
       end
