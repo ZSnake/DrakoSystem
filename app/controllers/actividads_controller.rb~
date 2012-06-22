@@ -89,7 +89,7 @@ class ActividadsController < ApplicationController
     end
   end
 
-  private
+  
   
   def sort_column
     Actividad.column_names.include?(params[:sort]) ? params[:sort] : "Nombre"

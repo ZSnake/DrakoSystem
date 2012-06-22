@@ -6,12 +6,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= sortable "id", "Id" %></th>
-      <th><%= sortable model_class.human_attribute_name(:Nombre) %></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:Nombre) %></th>
       <th>Dia Habil</th>
-      <th><%= sortable model_class.human_attribute_name(:Fecha) %></th>
-      <th><%= sortable "tipo_id", "Tipo" %></th>
-      <th><%= sortable "puntuacion", "Puntuacion" %></th>
+      <th><%= model_class.human_attribute_name(:Fecha) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_id) %></th>
+      <th><%= model_class.human_attribute_name(:puntuacion) %></th>
       <th>Creado en</th>
        
       <th><%=t '.actions', :default => t("helpers.actions") %></th>

@@ -12,7 +12,5 @@
  *= require_tree .
 */
 
-.simple_form label.collection_radio {
-  margin-right: 10px;
-  margin-left: 2px;
-}
+
+

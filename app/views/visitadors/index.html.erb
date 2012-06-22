@@ -5,11 +5,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th>Numero de Visitador</th>
-      <th><%= model_class.human_attribute_name(:Nombre) %></th>
+      <th><%= sortable "id", "Id" %></th>
+      <th><%= sortable "numeroVisitador" %></th>
+      <th><%= sortable model_class.human_attribute_name(:Nombre) %></th>
       <th><%= model_class.human_attribute_name(:Observaciones) %></th>
-      <th>Puntuacion</th>
+      <th> <%sortable "puntuacion" "Puntuacion"%></th>
       <th>Creado en </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
