@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <th><%= sortable "id", "Id" %></th>
-      <th><%= sortable "numeroVisitador" %></th>
-      <th><%= sortable model_class.human_attribute_name(:Nombre) %></th>
-      <th><%= model_class.human_attribute_name(:Observaciones) %></th>
+      <th><%= sortable "numerovisitador", "Numero del Visitador" %></th>
+      <th><%= sortable model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:observaciones) %></th>
       <th> <%sortable "puntuacion" "Puntuacion"%></th>
       <th>Creado en </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -18,9 +18,9 @@
     <% @visitadors.each do |visitador| %>
       <tr>
         <td><%= link_to visitador.id, visitador_path(visitador) %></td>
-        <td><%= visitador.numeroVisitador %></td>
-        <td><%= visitador.Nombre %></td>
-        <td><%= visitador.Observaciones %></td>
+        <td><%= visitador.numerovisitador %></td>
+        <td><%= visitador.nombre %></td>
+        <td><%= visitador.observaciones %></td>
         <td><%= visitador.puntuacion %></td>
         <td><%=l visitador.created_at %></td>
         <td>

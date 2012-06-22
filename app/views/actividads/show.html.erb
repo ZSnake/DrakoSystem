@@ -5,11 +5,11 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:Nombre) %>:</strong></dt>
-  <dd><%= @actividad.Nombre %></dd>
+  <dd><%= @actividad.nombre %></dd>
   <dt><strong>Dia Habil:</strong></dt>
-  <dd><%= @actividad.DiaHabil %></dd>
+  <dd><%= @actividad.diahabil %></dd>
   <dt><strong><%= model_class.human_attribute_name(:Fecha) %>:</strong></dt>
-  <dd><%= @actividad.Fecha %></dd>
+  <dd><%= @actividad.fecha %></dd>
   <dt><strong>Tipo</strong></dt>
   <dd><%= link_to @actividad.tipo_actividad.Nombre, @actividad.tipo_actividad %></dd>
   <dt><strong><%= model_class.human_attribute_name(:puntuacion) %>:</strong></dt>

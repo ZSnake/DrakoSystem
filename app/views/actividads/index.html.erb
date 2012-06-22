@@ -7,9 +7,9 @@
   <thead>
     <tr>
       <th><%= sortable "id", "Id" %></th>
-      <th><%= sortable model_class.human_attribute_name(:Nombre) %></th>
+      <th><%= sortable model_class.human_attribute_name(:nombre) %></th>
       <th>Dia Habil</th>
-      <th><%= sortable model_class.human_attribute_name(:Fecha) %></th>
+      <th><%= sortable model_class.human_attribute_name(:fecha) %></th>
       <th><%= sortable "tipo_id", "Tipo" %></th>
       <th><%= sortable "puntuacion", "Puntuacion" %></th>
       <th>Creado en</th>
@@ -21,9 +21,9 @@
     <% @actividads.each do |actividad| %>
       <tr>
         <td><%= link_to actividad.id, actividad_path(actividad) %></td>
-        <td><%= actividad.Nombre %></td>
-        <td><%= actividad.DiaHabil %></td>
-        <td><%= actividad.Fecha %></td>
+        <td><%= actividad.nombre %></td>
+        <td><%= actividad.diahabil %></td>
+        <td><%= actividad.fecha %></td>
         <td><%= link_to actividad.tipo_actividad.Nombre, actividad.tipo_actividad %></td>
         <td><%= actividad.puntuacion %></td>
         <td><%=l actividad.created_at %></td>

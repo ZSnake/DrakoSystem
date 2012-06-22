@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622132149) do
+ActiveRecord::Schema.define(:version => 20120622181313) do
 
   create_table "actividads", :force => true do |t|
-    t.string   "Nombre"
-    t.boolean  "DiaHabil"
-    t.date     "Fecha"
+    t.string   "nombre"
+    t.boolean  "diahabil"
+    t.date     "fecha"
     t.integer  "tipo_id"
     t.decimal  "puntuacion"
     t.datetime "created_at",        :null => false
@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(:version => 20120622132149) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "visitadors", :force => true do |t|
-    t.string   "numeroVisitador"
-    t.string   "Nombre"
-    t.text     "Observaciones"
+    t.string   "numerovisitador"
+    t.string   "nombre"
+    t.text     "observaciones"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "puntuacion"

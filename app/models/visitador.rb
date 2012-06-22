@@ -1,7 +1,7 @@
 class Visitador < ActiveRecord::Base
     has_and_belongs_to_many :actividads
-    validates :numeroVisitador, :Nombre, :presence => true
-    validates :numeroVisitador, :uniqueness => true
+    validates :numerovisitador, :nombre, :presence => true
+    validates :numerovisitador, :uniqueness => true
 
     def puntos
         punt = 0
