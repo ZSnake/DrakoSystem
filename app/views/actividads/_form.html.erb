@@ -1,6 +1,6 @@
 <%= simple_form_for @actividad, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :Nombre %>
-  <%= f.input :DiaHabil, :label => "Dia Habil" %>
+  <%= f.input :DiaHabil, :label => "Dia Habil\n" %>
   <%= f.input :Fecha %>
   <%= f.association :tipo_actividad, :label_method => :Nombre, :label => "Tipo de actividad", :include_blank => false %>
   <%= f.input :puntuacion, :collection => 1..10, :include_blank => false%>
