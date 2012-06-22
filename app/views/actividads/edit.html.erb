@@ -1,0 +1,6 @@
+<%- model_class = @actividad.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                   :default => "Editar Actividad") %></h1>
+</div>
+<%= render :partial => 'form' %>

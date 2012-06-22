@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Nombre: MyString
+  DiaHabil: false
+  Fecha: 2012-06-21
+  tipo_id: 1
+  puntuacion: 9.99
+
+two:
+  Nombre: MyString
+  DiaHabil: false
+  Fecha: 2012-06-21
+  tipo_id: 1
+  puntuacion: 9.99
