@@ -4,8 +4,12 @@ class ActividadsController < ApplicationController
   before_filter :authenticate_user!
  helper_method :sort_column, :sort_direction
   def index
-    
-    @actividads = Actividad.order(sort_column + " " + sort_direction)
+    if params[:search]
+      @actividads = Actividad.text_search(params[:search])
+      
+    else
+      @actividads = Actividad.order(sort_column + " " + sort_direction)
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @actividads }
