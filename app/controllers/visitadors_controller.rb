@@ -6,14 +6,14 @@ class VisitadorsController < ApplicationController
   helper_method :sort_column, :sort_direction
   def points
     Visitador.all.each do |v|
-      if v.puntuacion
+      if v && v.puntuacion
         v.puntos
         v.save
       end
     end
   end
   def index
-    if params[:search].present?
+    if params[:search]
       @visitadors = Visitador.text_search(params[:search])
     else
       @visitadors = Visitador.order(sort_column + " " + sort_direction)
