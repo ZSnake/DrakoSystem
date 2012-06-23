@@ -12,6 +12,7 @@ class VisitadorsController < ApplicationController
       end
     end
   end
+  
   def index
     if params[:search]
       @visitadors = Visitador.text_search(params[:search])
@@ -95,7 +96,6 @@ class VisitadorsController < ApplicationController
     end
   end
 
-private
   def sort_column
     Visitador.column_names.include?(params[:sort]) ? params[:sort] : "Nombre"
   end
