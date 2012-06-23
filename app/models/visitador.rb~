@@ -17,15 +17,10 @@ class Visitador < ActiveRecord::Base
         if query.present?
             if where("nombre @@ :q", q: query) != []
               where("nombre @@ :q", q: query)
-            else 
-              if where("numerovisitador @@ :q", q: query) != []
-	            where("numerovisitador @@ :q", q: query)	
-              else
-                []
-              end
-            end
-
-    
+	    end
+            if where("numerovisitador @@ :q", q: query) != []
+	      where("numerovisitador @@ :q", q: query)	
+	    end
         else
             all
         end

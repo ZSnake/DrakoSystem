@@ -13,8 +13,11 @@ class VisitadorsController < ApplicationController
     end
   end
   def index
-    @visitadors = Visitador.order(sort_column + " " + sort_direction)
-
+    if params[:search].present?
+      @visitadors = Visitador.text_search(params[:search])
+    else
+      @visitadors = Visitador.order(sort_column + " " + sort_direction)
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @visitadors }
