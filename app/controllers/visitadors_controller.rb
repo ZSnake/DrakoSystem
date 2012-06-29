@@ -88,6 +88,11 @@ class VisitadorsController < ApplicationController
   # DELETE /visitadors/1.json
   def destroy
     @visitador = Visitador.find(params[:id])
+    PuntuacionesActividad.all.each do |pa|
+        if pa.visitador_id == @visitador.id
+            pa.destroy
+        end
+    end
     @visitador.destroy
 
     respond_to do |format|
