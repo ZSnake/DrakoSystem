@@ -11,12 +11,11 @@ DrakoSystem::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
-  config.assets.precompile = true
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
-  config.assets.initialize_on_precompile = false
+  config.assets.initialize_on_precompile = true
   # Generate digests for assets URLs
   config.assets.digest = true
   # Defaults to Rails.root.join("public/assets")
