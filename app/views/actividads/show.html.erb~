@@ -26,7 +26,7 @@
     <tbody>
         <% @actividad.puntuaciones_actividads.each do |pa| %>
             <tr>
-              <td><%= link_to pa.to_label, pa.visitador%></td>
+              <td><%= link_to pa.to_label, pa%></td>
               <td><%= pa.puntuacion%></td>
             </tr>
         <%end%>

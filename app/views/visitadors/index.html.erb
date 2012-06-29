@@ -17,7 +17,7 @@
       <th><%= sortable "numerovisitador", "Numero del Visitador" %></th>
       <th><%= sortable model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:observaciones) %></th>
-      <th> <%sortable "puntuacion" "Puntuacion"%></th>
+      <th> <%=sortable "puntuacion", "Puntuacion"%></th>
       <th>Creado en </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -29,7 +29,7 @@
         <td><%= visitador.numerovisitador %></td>
         <td><%= visitador.nombre %></td>
         <td><%= visitador.observaciones %></td>
-        <td><%= visitador.puntuacion %></td>
+        <td><%= visitador.puntos %></td>
         <td><%=l visitador.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
