@@ -69,6 +69,12 @@ class ActividadsController < ApplicationController
     @actividad = Actividad.find(params[:id])
     respond_to do |format|
       if @actividad.update_attributes(params[:actividad])
+        @actividad.visitadors.each do |v|
+          if(!PuntuacionesActividad.find(:first, :conditions => {:actividad_id => @actividad.id, :visitador_id => v.id}))
+            pu = PuntuacionesActividad.new(:actividad_id => @actividad.id, :visitador_id => v.id, :puntuacion => @actividad.puntuacion)
+            pu.save
+          end
+        end
         format.html { redirect_to @actividad, notice: 'Actividad was successfully updated.' }
         format.json { head :no_content }
       else

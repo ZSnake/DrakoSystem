@@ -8,6 +8,8 @@
   <dd><%= @visitador.numerovisitador %></dd>
   <dt><strong><%= model_class.human_attribute_name(:Nombre) %>:</strong></dt>
   <dd><%= @visitador.nombre %></dd>
+  <dt><strong>Actividades</strong></dt>
+  <dd><%= @visitador.actividads.count.to_s %></dd>
   <dt><strong><%= model_class.human_attribute_name(:Observaciones) %>:</strong></dt>
   <dd><%= @visitador.observaciones %></dd>
 </dl>

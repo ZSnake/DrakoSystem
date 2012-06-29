@@ -12,9 +12,27 @@
   <dd><%= @actividad.fecha %></dd>
   <dt><strong>Tipo</strong></dt>
   <dd><%= link_to @actividad.tipo_actividad.Nombre, @actividad.tipo_actividad %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:puntuacion) %>:</strong></dt>
+  <dt><strong>Puntuacion </strong></dt>
   <dd><%= @actividad.puntuacion %></dd>
 </dl>
+<div class = "page-header"><h3>Puntuaciones</h3></div>
+  <table class = "table table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Puntuacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @actividad.puntuaciones_actividads.each do |pa| %>
+            <tr>
+              <td><%= pa.to_label%></td>
+              <td><%= pa.puntuacion%></td>
+            </tr>
+        <%end%>
+    </tbody>
+  </table>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

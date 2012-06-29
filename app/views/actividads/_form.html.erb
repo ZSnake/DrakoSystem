@@ -5,7 +5,10 @@
   <p><%= f.association :tipo_actividad, :label_method => :Nombre, :label => "Tipo de actividad", :include_blank => false %></p>
   <p><%= f.input :puntuacion%></p>
   <p><%= f.association :visitadors, :collection => Visitador.all, :label_method => :nombre, :label => "Seleccione los visitadores participantes: ", :input_html => {:id => "mySelect", :size => 15}%></p>:
-  
+ <div class = "page-header"><h3> Puntuaciones </h3></div>
+<%= f.simple_fields_for :puntuaciones_actividads do |pa| %>
+     <%= render 'puntuaciones_fields', f: pa%>
+<%end%>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
