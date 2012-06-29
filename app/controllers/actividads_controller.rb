@@ -75,6 +75,11 @@ class ActividadsController < ApplicationController
             pu.save
           end
         end
+        @actividad.puntuaciones_actividads.each do |pa|
+            if !@actividad.visitadors.exists?(:id => pa.visitador_id)
+                pa.destroy
+            end  
+        end
         format.html { redirect_to @actividad, notice: 'Actividad was successfully updated.' }
         format.json { head :no_content }
       else
