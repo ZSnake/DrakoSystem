@@ -11,6 +11,7 @@ DrakoSystem::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
+  config.assets.precompile = true
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
