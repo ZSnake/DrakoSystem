@@ -63,7 +63,7 @@
 	    <ul class ="nav pull-right">
 		<%if user_signed_in? %>	
 			<% s = "Sesion iniciada: " + current_user.email%>				
-			<li> <%= link_to s, edit_user_registration_path%> </li>
+            <li> <%= link_to s, edit_user_registration_path(current_user)%> </li>
             <li class="divider-vertical"></li>			
 			<li><%= link_to "Cerrar Sesion", destroy_user_session_path, :method => "delete"%></li>
 		<%else%>

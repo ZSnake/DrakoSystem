@@ -3,27 +3,27 @@
 en:
   errors:
     messages:
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      already_confirmed: "was already confirmed, please try signing in"
-      not_locked: "was not locked"
+      expired: "Ha expirado, por favor pida una nueva"
+      not_found: "No encontrado"
+      already_confirmed: "Ya ha confirmado, por favor intente iniciar sesion"
+      not_locked: "No estaba bloqueado"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "1 error impidio que %{resource} fuera salvado:"
+        other: "%{count} errores impidieron que este %{resource} fuera guardado:"
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
+      already_authenticated: 'Ya ha iniciado sesion'
       unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'Your account is locked.'
       invalid: 'Invalid email or password.'
       invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
+      timeout: 'Su sesion ha expirado, por favor inicie sesion nuevamente'
       inactive: 'Your account was not activated yet.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: 'Ha iniciado sesion correctamente'
+      signed_out: 'Ha cerrado sesion correctamente'
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'

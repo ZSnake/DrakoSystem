@@ -1,18 +1,22 @@
 DrakoSystem::Application.routes.draw do
-  
-  get "users/index"
+  default_url_options :host => "http://drakosystem.herokuapp.com" 
+  get "user/edit"
 
-  get "users/edit"
+  get "user/index"
 
-  get "users/update"
+  get "user/update"
 
   get "index/edit"
 
   get "index/update"
 
   get "pages/auth_error"  
-  devise_for :users
 
+  devise_for :users, :skip => [:registrations] 
+  as :user do
+      get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+      put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  end
   resources :visitadors
 
   resources :tipo_actividads
