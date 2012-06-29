@@ -2,7 +2,7 @@ class ActividadsController < ApplicationController
   # GET /actividads
   # GET /actividads.json
   before_filter :authenticate_user!
- helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction
   def index
     if params[:search]
       @actividads = Actividad.text_search(params[:search])
@@ -41,18 +41,19 @@ class ActividadsController < ApplicationController
   # GET /actividads/1/edit
   def edit
     @actividad = Actividad.find(params[:id])
+    @puntuaciones = @actividad.puntuaciones_actividads
   end
 
   # POST /actividads
   # POST /actividads.json
   def create
     @actividad = Actividad.new(params[:actividad])
-    @actividad.visitadors.each do |v|
-        v.puntos
-        v.save
-    end
     respond_to do |format|
-      if @actividad.save
+      if @actividad.save    
+        @actividad.visitadors.each do |v|
+            pu = PuntuacionesActividad.new(:actividad_id => @actividad.id, :visitador_id => v.id, :puntuacion => @actividad.puntuacion)
+            pu.save
+        end
         format.html { redirect_to @actividad, notice: 'Actividad was successfully created.' }
         format.json { render json: @actividad, status: :created, location: @actividad }
       else
@@ -66,10 +67,6 @@ class ActividadsController < ApplicationController
   # PUT /actividads/1.json
   def update
     @actividad = Actividad.find(params[:id])
-    @actividad.visitadors.each do |v|
-         v.puntos
-         v.save
-    end
     respond_to do |format|
       if @actividad.update_attributes(params[:actividad])
         format.html { redirect_to @actividad, notice: 'Actividad was successfully updated.' }

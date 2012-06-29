@@ -2,6 +2,8 @@ class Actividad < ActiveRecord::Base
     has_and_belongs_to_many :visitadors
     belongs_to :tipo_actividad
     validates :nombre, :presence => true
+    has_many :puntuaciones_actividads 
+    accepts_nested_attributes_for :puntuaciones_actividads
     
     def self.text_search(query)
         if query.present?
@@ -30,4 +32,5 @@ class Actividad < ActiveRecord::Base
     def self.isDate?(s)
       s.to_s.match(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/) == nil ? false : true
    end
+
 end

@@ -1,5 +1,6 @@
 class Visitador < ActiveRecord::Base
     has_and_belongs_to_many :actividads
+    has_many :puntuaciones_actividads
     validates :numerovisitador, :nombre, :presence => true
     validates :numerovisitador, :uniqueness => true
 

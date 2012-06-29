@@ -1,5 +1,16 @@
 DrakoSystem::Application.routes.draw do
   
+  get "users/index"
+
+  get "users/edit"
+
+  get "users/update"
+
+  get "index/edit"
+
+  get "index/update"
+
+  get "pages/auth_error"  
   devise_for :users
 
   resources :visitadors

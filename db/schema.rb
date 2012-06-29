@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622181313) do
+ActiveRecord::Schema.define(:version => 20120628105358) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20120622181313) do
   create_table "actividads_visitadors", :force => true do |t|
     t.integer "actividad_id"
     t.integer "visitador_id"
+  end
+
+  create_table "puntuaciones_actividads", :force => true do |t|
+    t.integer  "actividad_id"
+    t.integer  "visitador_id"
+    t.integer  "puntuacion"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "tipo_actividads", :force => true do |t|
@@ -49,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20120622181313) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "permiso"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
