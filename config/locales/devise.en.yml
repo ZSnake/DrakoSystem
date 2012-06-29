@@ -14,10 +14,10 @@ en:
   devise:
     failure:
       already_authenticated: 'Ya ha iniciado sesion'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unauthenticated: 'Debe iniciar sesion antes de continuar.'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
+      invalid: 'Email o password incorrecto.'
       invalid_token: 'Invalid authentication token.'
       timeout: 'Su sesion ha expirado, por favor inicie sesion nuevamente'
       inactive: 'Your account was not activated yet.'
